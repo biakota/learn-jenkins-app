@@ -13,7 +13,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm install -g npm@10.9.1
+                    sudo npm install -g npm@10.9.1
                     npm run build
                     ls -la
                 '''
