@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Cleanup') {
+            steps {
+                sh 'rm -rf node_modules'
+                sh 'npm cache clean --force'
+            }
         stage('Build') {
             agent {
                 docker {
@@ -15,7 +20,6 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    rm -rf node_modules
                     npm ci
                     npm run build
                     ls -la
