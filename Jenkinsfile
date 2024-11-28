@@ -13,7 +13,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm ci -unsafe-perm
+                    npm install
                     npm run build
                     ls -la
                 '''
