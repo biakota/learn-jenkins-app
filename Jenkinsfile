@@ -7,6 +7,7 @@ pipeline {
                 sh 'rm -rf node_modules'
                 sh 'npm cache clean --force'
             }
+        }
         stage('Build') {
             agent {
                 docker {
