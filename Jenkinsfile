@@ -1,22 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18-alpine'
-            reuseNode true
-        }
-    }
 
     stages {
-        stage('Cleanup') {
-            steps {
-                sh 'rm -rf node_modules'
-                sh 'npm cache clean --force'
-            }
-        }
         stage('Build') {
 
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
             steps {
-                echo 'Hello World'
                 sh '''
                     ls -la
                     node --version
