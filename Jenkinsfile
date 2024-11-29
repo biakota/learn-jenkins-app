@@ -13,6 +13,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
+                    npm config get prefix
                     npm ci
                     ls -la
                 '''
