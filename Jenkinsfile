@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:latest'
+                    image 'node:18-alpine'
                     reuseNode true
                 }
             }
@@ -13,7 +13,6 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm config get prefix
                     npm ci
                     ls -la
                 '''
