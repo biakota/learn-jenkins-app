@@ -13,6 +13,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
+                    chown -R 132:143 "/.npm"
                     npm ci
                     ls -la
                 '''
