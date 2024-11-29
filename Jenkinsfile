@@ -13,7 +13,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    whereis npm
+                    npm ci
                     ls -la
                 '''
             }
